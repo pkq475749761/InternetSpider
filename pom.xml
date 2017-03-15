@@ -3,6 +3,13 @@
   <groupId>com.pkq475749761</groupId>
   <artifactId>InternetSpider</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <parent>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.0.BUILD-SNAPSHOT</version>
+  </parent>
+  
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -14,6 +21,45 @@
           <target>1.8</target>
         </configuration>
       </plugin>
+      <plugin>
+      	<groupId>org.springframework.boot</groupId>
+      	<artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
     </plugins>
   </build>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.2</version>
+	</dependency>
+	<dependency>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+  </dependencies>
+  
+  <repositories>
+  	<repository>
+    	<id>spring-snapshots</id>
+    	<url>http://repo.spring.io/snapshot</url>
+    	<snapshots><enabled>true</enabled></snapshots>
+    </repository>
+    <repository>
+        <id>spring-milestones</id>
+        <url>http://repo.spring.io/milestone</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+  	<pluginRepository>
+    	<id>spring-snapshots</id>
+        <url>http://repo.spring.io/snapshot</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>spring-milestones</id>
+        <url>http://repo.spring.io/milestone</url>
+    </pluginRepository>
+  </pluginRepositories>
+  
 </project>
